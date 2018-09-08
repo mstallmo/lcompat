@@ -23,14 +23,16 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-eslint": "^9.0.0",
-    "babel-plugin-dynamic-import-node": "^2.1.0",
     "eslint": "^5.5.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "commander": "^2.18.0",
+    "ora": "^3.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   }
 }

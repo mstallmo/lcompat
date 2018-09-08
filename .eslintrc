@@ -1,4 +1,244 @@
 {
+    "root": true,
     "parser": "babel-eslint",
-    "extends": "airbnb"
-}
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module",
+      "impliedStrict": true,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "shared-node-browser": true,
+      "es6": true,
+      "mocha": true,
+      "jasmine": true,
+      "jest": true
+    },
+    "rules": {
+      // http://eslint.org/docs/rules/
+  
+      // Possible Errors
+      // http://eslint.org/docs/rules/#possible-errors
+      // These rules relate to possible syntax or logic errors in JavaScript code:
+  
+      "no-cond-assign": 2, // disallow assignment in conditional expressions
+      "no-console": 0, // disallow use of console
+      "no-constant-condition": 2, // disallow use of constant expressions in conditions
+      "no-control-regex": 2, // disallow control characters in regular expressions
+      "no-debugger": 2, // disallow use of debugger
+      "no-dupe-args": 2, // disallow duplicate arguments in functions
+      "no-dupe-keys": 2, // disallow duplicate keys when creating object literals
+      "no-duplicate-case": 2, // disallow a duplicate case label
+      "no-empty-character-class": 2, // disallow empty character classes in regular expressions
+      "no-empty": 2, // disallow empty block statements
+      "no-ex-assign": 2, // disallow assigning to the exception in a catch block
+      "no-extra-boolean-cast": 2, // disallow double-negation boolean casts in a boolean context
+      "no-extra-parens": 0, // disallow unnecessary parentheses. NOTE: This does not play nice with multiline JSX elements needing to be wrapped in ()
+      "no-extra-semi": 2, // disallow unnecessary semicolons
+      "no-func-assign": 2, // disallow overwriting functions written as function declarations
+      "no-inner-declarations": 2, // disallow function or variable declarations in nested blocks
+      "no-invalid-regexp": 2, // disallow invalid regular expression strings in the RegExp constructor
+      "no-irregular-whitespace": 2, // disallow irregular whitespace outside of strings and comments
+      "no-obj-calls": 2, // disallow the use of object properties of the global object (Math and JSON) as functions
+      "no-prototype-builtins": 0, // disallow calling some Object.prototype methods directly on objects
+      "no-regex-spaces": 2, // disallow multiple spaces in a regular expression literal
+      "no-sparse-arrays": 2, // disallow sparse arrays
+      "no-template-curly-in-string": 2, // disallow template literal placeholder syntax in regular strings
+      "no-unexpected-multiline": 2, // Avoid code that looks like two expressions but is actually one
+      "no-unreachable": 2, // disallow unreachable statements after a return, throw, continue, or break statement
+      "no-unsafe-finally": 2, // disallow control flow statements in finally blocks
+      "no-unsafe-negation": 2, // disallow negating the left operand of relational operators
+      "use-isnan": 2, // disallow comparisons with the value NaN
+      "valid-jsdoc": 0, // Ensure JSDoc comments are valid
+      "valid-typeof": 2, // Ensure that the results of typeof are compared against a valid string
+  
+      // Best Practices
+      // http://eslint.org/docs/rules/#best-practices
+      // These rules relate to better ways of doing things to help you avoid problems
+  
+      "accessor-pairs": 0, // enforce getter and setter pairs in objects
+      "array-callback-return": 0, // enforce return statements in callbacks of array methods
+      "block-scoped-var": 2, // treat var statements as if they were block scoped. 0: deep destructuring is not compatible https://github.com/eslint/eslint/issues/1863
+      "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program
+      "consistent-return": 2, // require return statements to either always or never specify values
+      "curly": 2, // specify curly brace conventions for all control statements
+      "default-case": 0, // require default case in switch statements
+      "dot-location": [2, "property"], // enforces consistent newlines before or after dots
+      "dot-notation": 2, // encourages use of dot notation whenever possible
+      "eqeqeq": 2, // require the use of === and !==
+      "guard-for-in": 2, // make sure for-in loops have an if statement
+      "no-alert": 2, // disallow the use of alert, confirm, and prompt
+      "no-caller": 2, // disallow use of arguments.caller or arguments.callee
+      "no-case-declarations": 2, // disallow lexical declarations in case clauses
+      "no-div-regex": 2, // disallow division operators explicitly at beginning of regular expression
+      "no-else-return": 2, // disallow else after a return in an if
+      "no-empty-function": 2, // disallow empty functions
+      "no-empty-pattern": 2, // disallow empty destructuring patterns
+      "no-eq-null": 2, // disallow comparisons to null without a type-checking operator
+      "no-eval": 2, // disallow use of eval()
+      "no-extend-native": 2, // disallow adding to native types
+      "no-extra-bind": 2, // disallow unnecessary function binding
+      "no-extra-label": 2, // disallow unnecessary labels
+      "no-fallthrough": 0, // disallow fallthrough of case statements
+      "no-floating-decimal": 2, // disallow the use of leading or trailing decimal points in numeric literals
+      "no-global-assign": 2, // disallow assignments to native objects or read-only global variables
+      "no-implicit-coercion": 2, // disallow shorthand type conversions
+      "no-implicit-globals": 2, // disallow var and named function declarations in the global scope
+      "no-implied-eval": 2, // disallow use of eval()-like methods
+      "no-invalid-this": 0, // disallow this keywords outside of classes or class-like objects
+      "no-iterator": 2, // disallow usage of __iterator__ property
+      "no-labels": 2, // disallow use of labeled statements
+      "no-lone-blocks": 2, // disallow unnecessary nested blocks
+      "no-loop-func": 2, // disallow creation of functions within loops
+      "no-magic-numbers": [0, { "ignoreArrayIndexes": true }], // disallow magic numbers
+      "no-multi-spaces": 2, // disallow use of multiple spaces
+      "no-multi-str": 2, // disallow use of multiline strings
+      "no-new-func": 2, // disallow use of new operator for Function object
+      "no-new-wrappers": 2, // disallows creating new instances of String,Number, and Boolean
+      "no-new": 2, // disallow use of new operator when not part of the assignment or comparison
+      "no-octal-escape": 2, // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
+      "no-octal": 2, // disallow use of octal literals
+      "no-param-reassign": 0, // disallow reassignment of function parameters
+      "no-proto": 2, // disallow usage of __proto__ property
+      "no-redeclare": [2, {"builtinGlobals": true}], // disallow declaring the same variable more then once
+      "no-return-assign": 2, // disallow use of assignment in return statement
+      "no-script-url": 2, // disallow use of javascript: urls.
+      "no-self-assign": 2, // disallow assignments where both sides are exactly the same
+      "no-self-compare": 2, // disallow comparisons where both sides are exactly the same
+      "no-sequences": 2, // disallow use of comma operator
+      "no-throw-literal": 2, // restrict what can be thrown as an exception
+      "no-unmodified-loop-condition": 2, // disallow unmodified loop conditions
+      "no-unused-expressions": 2, // disallow usage of expressions in statement position
+      "no-unused-labels": 2, // disallow unused labels
+      "no-useless-call": 2, // disallow unnecessary calls to .call() and .apply()
+      "no-useless-concat": 2, // disallow unnecessary concatenation of literals or template literals
+      "no-useless-escape": 2, // disallow unnecessary escape characters
+      "no-void": 2, // disallow use of void operator
+      "no-warning-comments": 0, // disallow usage of configurable warning terms in comments
+      "no-with": 2, // disallow use of the with statement
+      "radix": 2, // require use of the second argument for parseInt()
+      "vars-on-top": 0, // requires to declare all vars on top of their containing scope
+      "wrap-iife": 2, // require immediate function invocation to be wrapped in parentheses
+      "yoda": 2, // require or disallow Yoda conditions
+  
+      // Strict Mode
+      // http://eslint.org/docs/rules/#strict-mode
+      // These rules relate to using strict mode.
+  
+      "strict": 0, // require or disallow strict mode directives
+  
+      // Variables
+      // http://eslint.org/docs/rules/#variables
+      // These rules have to do with variable declarations
+  
+      "init-declarations": 0, // require or disallow initialization in var declarations
+      "no-catch-shadow": 2, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
+      "no-delete-var": 2, // disallow deletion of variables
+      "no-label-var": 2, // disallow labels that share a name with a variable
+      "no-restricted-globals": 0, // disallow specified global variables
+      "no-shadow-restricted-names": 2, // disallow shadowing of names such as arguments
+      "no-shadow": 2, // disallow declaration of variables already declared in the outer scope
+      "no-undef-init": 2, // disallow use of undefined when initializing variables
+      "no-undef": 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
+      "no-undefined": 0, // disallow use of undefined variable
+      "no-unused-vars": [0, { "vars": "all", "args": "none" }], // disallow declaration of variables that are not used in the code
+      "no-use-before-define": 2, // disallow use of variables before they are defined
+  
+      // Node.js and CommonJS
+      // http://eslint.org/docs/rules/#nodejs-and-commonjs
+      // These rules relate to code running in Node.js, or in browsers with CommonJS
+  
+      "global-require": 2, // require require() calls to be placed at top-level module scope
+  
+      // Stylistic Issues
+      // http://eslint.org/docs/rules/#stylistic-issues
+      // These rules relate to style guidelines, and are therefore quite subjective
+  
+      "array-bracket-spacing": [2, "never"], // enforce spacing inside array brackets
+      "block-spacing": 2, // enforce consistent spacing inside single-line blocks
+      "brace-style": [2, "1tbs", { "allowSingleLine": true }], // enforce one true brace style
+      "camelcase": [2, { "properties": "never" }], // require camel case names
+      "comma-dangle": 2, // require or disallow trailing commas
+      "comma-spacing": [2, {"before": false, "after": true}], // enforce spacing before and after comma
+      "comma-style": [2, "last"], // enforce one true comma style
+      "computed-property-spacing": [2, "never"], // require or disallow padding inside computed properties
+      "consistent-this": [2, "self"], // enforces consistent naming when capturing the current execution context
+      "eol-last": 0, // enforce newline at the end of file, with no multiple empty lines
+      "func-call-spacing": 0, // require or disallow spacing between function identifiers and their invocations
+      "func-names": 0, // require function expressions to have a name
+      "func-style": 0, // enforces use of function declarations or expressions
+      "indent": ["error", 2, {"SwitchCase": 1}], // enforce consistent indentation
+      "jsx-quotes": [2, "prefer-single"], // enforce the consistent use of either double or single quotes in JSX attributes
+      "key-spacing": [2, {"beforeColon": false, "afterColon": true}], // enforces spacing between keys and values in object literal properties
+      "keyword-spacing": 2, // require a space after certain keywords
+      "linebreak-style": [0, "windows"], // disallow mixed 'LF' and 'CRLF' as linebreaks
+      "lines-around-comment": 0, // enforces empty lines around comments
+      "new-cap": [2, {"newIsCap": true, "capIsNew": false}], // require a capital letter for constructors
+      "new-parens": 2, // disallow the omission of parentheses when invoking a constructor with no arguments
+      "newline-after-var": 0, // allow/disallow an empty newline after var statement
+      "no-array-constructor": 2, // disallow use of the Array constructor
+      "no-bitwise": 2, // disallow bitwise operators
+      "no-continue": 0, // disallow use of the continue statement
+      "no-inline-comments": 0, // disallow comments inline after code
+      "no-lonely-if": 2, // disallow if as the only statement in an else block
+      "no-mixed-spaces-and-tabs": 2, // disallow mixed spaces and tabs for indentation
+      "no-multiple-empty-lines": [2, { "max": 1 }], // disallow multiple empty lines
+      "no-negated-condition": 2, // disallow negated conditions
+      "no-nested-ternary": 0, // disallow nested ternary expressions
+      "no-new-object": 2, // disallow use of the Object constructor
+      "no-plusplus": [2, {"allowForLoopAfterthoughts": true }], // disallow the unary operators ++ and --
+      "no-spaced-func": 2, // disallow space between function identifier and application
+      "no-ternary": 0, // disallow the use of ternary operators
+      "no-trailing-spaces": 2, // disallow trailing whitespace at the end of lines
+      "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
+      "no-unneeded-ternary": 2, // disallow the use of Boolean literals in conditional expressions
+      "no-whitespace-before-property": 2, // disallow whitespace before properties
+      "object-curly-spacing": [2, "never"], // require or disallow padding inside curly braces
+      "one-var": [2, {"uninitialized": "always", "initialized": "never"}], // allow just one var statement per function for variables that are getting initialized, while not setting a lime for variables that are not initialized
+      "operator-assignment": 0, // require assignment operator shorthand where possible or prohibit it entirely
+      "operator-linebreak": [2, "after"], // enforce operators to be placed before or after line breaks
+      "padded-blocks": [2, "never"], // enforce padding within blocks
+      "quote-props": [0, "always"], // require quotes around object literal property names
+      "quotes": [2, "single"], // specify whether double or single quotes should be used
+      "semi-spacing": [2, {"before": false, "after": true}], // enforce spacing before and after semicolons
+      "semi": [2, "always"], // require or disallow use of semicolons instead of ASI
+      "sort-vars": 0, // sort variables within the same declaration block
+      "space-before-blocks": [2, "always"], // require or disallow space before blocks
+      "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}], // require or disallow space before function opening parenthesis
+      "space-in-parens": [2, "never"], // require or disallow spaces inside parentheses
+      "space-infix-ops": [2], // require spaces around operators
+      "space-unary-ops": [2, {"words": true, "nonwords": false}], // Require or disallow spaces before/after unary operators (words on by default, nonwords off by default)
+      "spaced-comment": [0], // require or disallow a space immediately following the // or /* in a comment
+      "wrap-regex": 0, // require regex literals to be wrapped in parentheses
+  
+      // ECMAScript 6
+      // http://eslint.org/docs/rules/#ecmascript-6
+      // These rules relate to ES6, also known as ES2015
+  
+      "arrow-spacing": [2, {"before": true, "after": true}], // enforce consistent spacing before and after the arrow in arrow functions
+      "constructor-super": 2, // verify super() callings in constructors
+      "generator-star-spacing": 0, // enforce the spacing around the * in generator functions BABEL
+      "no-class-assign": 2, // disallow reassigning class members
+      "no-const-assign": 2, // disallow reassigning const variables
+      "no-dupe-class-members": 2, // disallow duplicate class members
+      "no-duplicate-imports": 2, // disallow duplicate module imports
+      "no-new-symbol": 2, // disallow new operators with the Symbol object
+      "no-this-before-super": 2, // disallow to use this/super before super() calling in constructors.
+      "no-useless-computed-key": 2, // disallow unnecessary computed property keys in object literals
+      "no-useless-constructor": 2, // disallow unnecessary constructors
+      "no-useless-rename": 2, // disallow renaming import, export, and destructured assignments to the same name
+      "no-var": 0, // require let or const instead of var
+      "object-shorthand": 0, // require method and property shorthand syntax for object literals
+      "prefer-const": 0, // suggest using of const declaration for variables that are never modified after declared,
+      "prefer-rest-params": 2, // require rest parameters instead of arguments,
+      "prefer-spread": 2, // require spread operators instead of .apply()
+      "require-yield": 2, // require generator functions to contain yield
+      "rest-spread-spacing": [2, "never"], // enforce spacing between rest and spread operators and their expressions
+      "template-curly-spacing": [2, "never"], // require or disallow spacing around embedded expressions of template strings
+      "yield-star-spacing": [2, "after"], // require or disallow spacing around the * in yield* expressions
+    }
+  }
