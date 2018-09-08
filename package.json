@@ -1,0 +1,36 @@
+{
+  "name": "lcompat",
+  "version": "0.0.1",
+  "description": "Open source license compatability checker",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel . -d bin --ignore node_modules,test,bin,.build,temp,deployment --comments false",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "lcompat": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstallmo/lcompat.git"
+  },
+  "author": "Mason Stallmo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mstallmo/lcompat/issues"
+  },
+  "homepage": "https://github.com/mstallmo/lcompat#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-dynamic-import-node": "^2.1.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
