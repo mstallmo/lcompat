@@ -1,22 +1,17 @@
 #! /usr/bin/env node
 import '@babel/polyfill';
-import fs from 'fs';
 import rp from 'request-promise';
 import program from 'commander';
 import ora from 'ora';
 import checkLicense from './checkLicense';
-
-function readPackageJson(file = 'package.json') {
-  const data = fs.readFileSync(file);
-  return JSON.parse(data.toString('utf-8'));
-}
+import helpers from './helpers/helpers';
 
 program
   .version('0.0.1')
   .option('-f, --file <path>', 'Specify package.json to read')
   .parse(process.argv);
 
-const {license, devDependencies, dependencies} = readPackageJson(program.file);
+const {license, devDependencies, dependencies} = helpers.readPackageJson(program.file);
 checkLicense.registerProjectLicense(license);
 const totalDepEntries = Object.entries(dependencies).concat(Object.entries(devDependencies));
 

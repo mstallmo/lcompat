@@ -1,0 +1,70 @@
+{
+    "licenses": [
+        {
+            "name": "MIT",
+            "type": "permissive",
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
+
+        },
+        {
+            "name": "ISC",
+            "type": "permissive",
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"] 
+        },
+        {
+            "name": "Apache 2.0",
+            "type": "permissive",
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
+        },
+        {
+            "name": "LGPLv2.1",
+            "type": "weakCopyLeft",
+            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+        },
+        {
+            "name": "LGPLv2.1+",
+            "type": "weakCopyLeft",
+            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+        },
+        {
+            "name": "LGPLv3",
+            "type": "weakCopyLeft",
+            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+        },
+        {
+            "name": "LGPLv3+",
+            "type": "weakCopyLeft",
+            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+        },
+        {
+            "name": "MPL 1.1",
+            "type": "weakCopyLeft",
+            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+        },
+        {
+            "name": "GPLv2",
+            "type": "strongCopyLeft",
+            "worksWith": ["strongCopyLeft","networkCopyLeft"]
+        },
+        {
+            "name": "GPLv2+",
+            "type": "strongCopyLeft",
+            "worksWith": ["strongCopyLeft","networkCopyLeft"]
+        },
+        {
+            "name": "GPLv3",
+            "type": "strongCopyLeft",
+            "worksWith": ["strongCopyLeft","networkCopyLeft"]
+        },
+        {
+            "name": "GPLv3+",
+            "type": "strongCopyLeft",
+            "worksWith": ["strongCopyLeft","networkCopyLeft"]
+        },
+        {
+            "name": "Affero GPLv3",
+            "type": "networkCopyLeft",
+            "worksWith": ["networkCopyLeft"]
+        }
+    ]
+}

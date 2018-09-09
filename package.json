@@ -4,7 +4,10 @@
   "description": "Open source license compatability checker",
   "main": "index.js",
   "scripts": {
-    "build": "babel . -d bin --ignore node_modules,test,bin,.build,temp,deployment --comments false",
+    "build": "rm -rf ./bin && yarn run build:babel && yarn run copyJson",
+    "build:babel": "babel . -d bin --ignore node_modules,test,bin,.build,temp,deployment --comments false",
+    "copyJson": "cp -r ./definitions ./bin/",
+    "local": "npm run build && sudo npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {

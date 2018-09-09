@@ -1,15 +1,16 @@
+import helpers from './helpers/helpers';
+
 let projectLicense;
 
 const registerProjectLicense = (license) => {
+  license = helpers.loadLicenseDefinition(license);
   projectLicense = license;
+  console.log(projectLicense);
 };
 
 const checkLicenseAgainstDep = (depLicense) => {
-  if (depLicense === projectLicense) {
-    return true;
-  }
-
-  return false;
+  depLicense = helpers.loadLicenseDefinition(depLicense);
+  return depLicense.worksWith.includes(projectLicense.type);
 };
 
 export default {registerProjectLicense, checkLicenseAgainstDep};
