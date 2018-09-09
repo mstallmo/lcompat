@@ -4,7 +4,6 @@
             "name": "MIT",
             "type": "permissive",
             "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
-
         },
         {
             "name": "ISC",
@@ -19,27 +18,27 @@
         {
             "name": "LGPLv2.1",
             "type": "weakCopyLeft",
-            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
         },
         {
             "name": "LGPLv2.1+",
             "type": "weakCopyLeft",
-            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
         },
         {
             "name": "LGPLv3",
             "type": "weakCopyLeft",
-            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
         },
         {
             "name": "LGPLv3+",
             "type": "weakCopyLeft",
-            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
         },
         {
             "name": "MPL 1.1",
             "type": "weakCopyLeft",
-            "worksWith": ["weakCopyLeft","strongCopyLeft", "networkCopyLeft"]
+            "worksWith": ["permissive", "weakCopyLeft", "strongCopyLeft", "networkCopyLeft"]
         },
         {
             "name": "GPLv2",

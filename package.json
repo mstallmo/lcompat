@@ -5,12 +5,12 @@
   "main": "./bin/index.js",
   "scripts": {
     "build": "npm run clean:bin && npm run build:babel && npm run copyJson",
-    "build:babel": "babel ./src -d ./bin --ignore node_modules,test,bin,.build,temp,deployment --comments false",
+    "build:babel": "babel ./src -d ./bin --ignore node_modules,test,bin,.build,temp,deployment,**/*.test.js  --comments false",
     "clean:bin": "rm -rf ./bin",
     "copyJson": "cp -r ./src/definitions ./bin/",
     "local": "npm run build && sudo npm link",
-    "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "npm test && npm run build",
+    "test": "cross-env NODE_ENV=test jest"
   },
   "bin": {
     "lcompat": "bin/index.js"
@@ -29,15 +29,28 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "cross-env": "^5.2.0",
     "eslint": "^5.5.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "jest-extended": "^0.8.1",
+    "regenerator-runtime": "^0.12.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "commander": "^2.18.0",
+    "jest": "^23.5.0",
     "ora": "^3.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-extended",
+    "testURL": "http://localhost/",
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)(spec|test).js"
+    ]
   }
 }
