@@ -1,6 +1,6 @@
 {
   "name": "lcompat",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Open source license compatibility checker",
   "main": "./bin/index.js",
   "scripts": {
