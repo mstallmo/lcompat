@@ -1,13 +1,15 @@
 {
   "name": "lcompat",
   "version": "0.0.2",
-  "description": "Open source license compatability checker",
-  "main": "index.js",
+  "description": "Open source license compatibility checker",
+  "main": "./bin/index.js",
   "scripts": {
-    "build": "rm -rf ./bin && yarn run build:babel && yarn run copyJson",
-    "build:babel": "babel . -d bin --ignore node_modules,test,bin,.build,temp,deployment --comments false",
-    "copyJson": "cp -r ./definitions ./bin/",
+    "build": "npm run clean:bin && npm run build:babel && npm run copyJson",
+    "build:babel": "babel ./src -d ./bin --ignore node_modules,test,bin,.build,temp,deployment --comments false",
+    "clean:bin": "rm -rf ./bin",
+    "copyJson": "cp -r ./src/definitions ./bin/",
     "local": "npm run build && sudo npm link",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {

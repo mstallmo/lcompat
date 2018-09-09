@@ -5,7 +5,6 @@ let projectLicense;
 const registerProjectLicense = (license) => {
   license = helpers.loadLicenseDefinition(license);
   projectLicense = license;
-  console.log(projectLicense);
 };
 
 const checkLicenseAgainstDep = (depLicense) => {
